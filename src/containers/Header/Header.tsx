@@ -1,22 +1,26 @@
-import { memo, useState } from "react"
+import { memo, useEffect, useState } from "react"
 import Burger from "../../components/Burger/Burger"
 import styles from './Header.module.scss'
 
 type Props = {
-    scrollFromTop: number | undefined
+    scrollFromTop: number | null
 }
 
 function Header ({ scrollFromTop }: Props) {
 
-    const isOpen = () => {
-        if (scrollFromTop) {
-            return scrollFromTop >= window.innerHeight
+    const [ isOpen, setIsOpen ] = useState(false)
+
+    useEffect(() => {
+        if (scrollFromTop! >= window.innerHeight) {
+            setIsOpen(true)
+        } else {
+            setIsOpen(false)
         }
-    }
+    }, [scrollFromTop])
     
     return (
         <header className={styles.header}>
-            <Burger height="50" width="50" open={isOpen()} />
+            <Burger height="50" width="50" open={isOpen} />
         </header>   
     )
 }
