@@ -8,3 +8,54 @@
     align-items: center;
     justify-content: center;
 }
+
+.button {
+    position: fixed;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border: none;
+    background-color: transparent;
+
+    &__text {
+        display: inline-block;
+
+        padding-bottom: 4.5rem;
+
+        color: $mainWhite;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 1rem;
+
+        max-width: fit-content;
+
+        text-transform: uppercase;
+        letter-spacing: 5%;
+    }
+
+    &__line {
+        position: absolute;
+
+        content: '';
+        width: 1px;
+        height: 3rem;
+
+        background-color: $mainWhite;
+
+        left: 50%;
+        bottom: 0%;
+
+        transition: transform 250ms ease-out;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:hover .button__line {
+        transform: translateY(-15%);
+    }
+}
