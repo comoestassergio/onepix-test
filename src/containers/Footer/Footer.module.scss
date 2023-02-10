@@ -1,0 +1,28 @@
+@import '../../styles//utils/all.scss';
+
+.footer {
+    position: absolute;
+
+    bottom: 0%;
+    width: 100%;
+
+    color: $mainWhite;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2rem 4rem;
+
+    font-family: 'Montserrat';
+
+    & > p {
+        text-transform: uppercase;
+    }
+
+    & > p:nth-of-type(2) {
+        color: $mainOffWhite;
+        transform: translateX(50%);
+    }
+
+}
