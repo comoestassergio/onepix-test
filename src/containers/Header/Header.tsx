@@ -1,5 +1,8 @@
 import { memo, useEffect, useState } from "react"
+import cn from 'classnames'
+
 import Burger from "../../components/Burger/Burger"
+import Logo from "../../components/Logo/Logo"
 import styles from './Header.module.scss'
 
 type Props = {
@@ -19,7 +22,8 @@ function Header ({ scrollFromTop }: Props) {
     }, [scrollFromTop])
     
     return (
-        <header className={styles.header}>
+        <header className={cn(styles.header, {[styles.open]: isOpen})}>
+            {isOpen && <Logo className={styles.logo} />}
             <Burger height="50" width="50" open={isOpen} />
         </header>   
     )

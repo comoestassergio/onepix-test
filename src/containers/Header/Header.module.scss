@@ -4,7 +4,7 @@
     width: 100%;
 
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: end;
 
     padding: 2rem min(5vw, 4rem);
@@ -12,4 +12,26 @@
     background-color: transparent;
 
     z-index: 10;
+
+    &.open {
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.logo {
+    width: min(30vw, 166px);
+    height: auto;
+
+    animation: fade-in 250ms ease-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
