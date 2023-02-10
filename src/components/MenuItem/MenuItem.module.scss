@@ -1,0 +1,44 @@
+@import '../../styles/utils/all.scss';
+
+.menuItem {
+    text-decoration: none;
+
+    font-family: 'Montserrat';
+    color: $mainOffWhite;
+    letter-spacing: 5%;
+    text-transform: uppercase;
+    text-align: center;
+
+    font-size: 42px;
+
+    position: relative;
+
+    transition: color 250ms ease-out;
+
+    &::after {
+        position: absolute;
+        content: '';
+
+        bottom: 0%;
+        left: 0%;
+
+        width: 100%;
+        height: 1px;
+
+        background-color: $mainWhite;
+
+        transform: scaleX(0);
+        transform-origin: left;
+
+        transition: transform 250ms ease-out;
+    }
+
+    &:hover {
+        color: $mainWhite;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+}
